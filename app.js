@@ -25,6 +25,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
+  
 //template engine (ejs)
 app.use(expressLayouts);
 app.set("view engine", "ejs");

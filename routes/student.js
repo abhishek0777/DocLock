@@ -24,6 +24,7 @@ router.get("/login", (req, res) => {
 // for Student, we have create 'local.student' named to strategy
 //will authenticatec company and most imp , serialize it as a user
 router.post("/login", (req, res, next) => {
+  
   passport.authenticate("local.student", {
     successRedirect: "/student/dashboard",
     failureRedirect: "/student/login",

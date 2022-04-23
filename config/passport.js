@@ -73,28 +73,33 @@ module.exports=function(passport){
 
     //------------------Login authentication for student login-----------------------
     passport.use('local.student',
-        new LocalStrategy({usernameField:'email'},(email,password,done)=>{
+        new LocalStrategy({usernameField:'registrationNumber'},(registrationNumber,password,done)=>{
             //match account
-            Student.findOne({email:email})
+            Student.findOne({registrationNumber:registrationNumber})
             .then(student=>{
                 if(!student)
                 {
-                     return done(null,false,{message:'This email is not registered yet'});  
+                    return done(null,false,{message:'This email is not registered yet'});  
                 }
 
                 //it code comes here,it means email is registered
                 //now check for password
-                bcrypt.compare(password,student.password,(err,isMatch)=>{
-                    if(err) throw err;
-                    if(isMatch)
-                    {
-                        return done(null,student);
-                    }
-                    else
-                    {
-                        return done(null,false,{message:'Incorrect Password, Try again'})
-                    }
-                })
+                // bcrypt.compare(password,student.password,(err,isMatch)=>{
+                //     if(err) throw err;
+                //     if(isMatch)
+                //     {
+                //         return done(null,student);
+                //     }
+                //     else
+                //     {
+                //         return done(null,false,{message:'Incorrect Password, Try again'})
+                //     }
+                // })
+
+                if(password==student.password){
+                    return done(null,student);
+                }
+                return done(null,false);
             })
         })
     );
@@ -117,19 +122,24 @@ module.exports=function(passport){
 
                 //it code comes here,it means email is registered
                 //now check for password
-                bcrypt.compare(password,admin.password,(err,isMatch)=>{
-                    if(err) throw err;
+                // bcrypt.compare(password,admin.password,(err,isMatch)=>{
+                //     if(err) throw err;
                     
-                    //check does password matches or not
-                    if(isMatch)
-                    {
-                        return done(null,admin);
-                    }
-                    else
-                    {
-                        return done(null,false,{message:'Incorrect Password, Try again'})
-                    }
-                })
+                //     //check does password matches or not
+                //     if(isMatch)
+                //     {
+                //         return done(null,admin);
+                //     }
+                //     else
+                //     {
+                //         return done(null,false,{message:'Incorrect Password, Try again'})
+                //     }
+                // })
+
+                if(password==admin.password){
+                    return done(null,admin);
+                }
+                return done(null,false);
             })
         })
     );
