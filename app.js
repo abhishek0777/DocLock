@@ -11,7 +11,7 @@ const app=express();
 
 
 
-// require('./config/passport')(passport)
+require('./config/passport')(passport)
 
 //Database configuration
 const db=require('./config/keys.js').MongoURI;

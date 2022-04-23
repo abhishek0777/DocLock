@@ -39,4 +39,4 @@ const StudentSchema=mongoose.Schema({
 //Naming the created schema 'CompanySchema'
 const Student=mongoose.model('Student',StudentSchema);
 //then export it to use 
-module.exports=Company;
+module.exports=Student;

@@ -28,6 +28,6 @@ const AdminSchema=mongoose.Schema({
 });
 
 //Naming the created schema 'CompanySchema'
-const Student=mongoose.model('Student',StudentSchema);
+const Admin=mongoose.model('Admin',AdminSchema);
 //then export it to use 
-module.exports=Company;
+module.exports=Admin;
