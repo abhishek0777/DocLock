@@ -1,0 +1,26 @@
+
+.navbar-nav .nav-item .nav-link{
+    font-size: 15px;
+    font-weight: 350;
+    color:#007bff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbar-nav .nav-item .nav-link:hover{
+    color:white;
+}
+
+.nav-item{
+    margin-left:7px;
+}
+
+.navbar-nav .nav-item .activeNavLink{
+    
+    color:white;
+}
+
+.navbar-nav li{
+    border-radius: 0%;
+}
+
+
