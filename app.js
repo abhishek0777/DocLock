@@ -26,6 +26,10 @@ mongoose.connect(db,
     .catch(err=>console.log(err));
 
 
+
+    
+
+
     
 //template engine (ejs)
 app.use(expressLayouts);
