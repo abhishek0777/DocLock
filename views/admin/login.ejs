@@ -1,0 +1,148 @@
+<!-- navbar  -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <img src="/images/logo.png" alt="" width="45" height="40"/>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navmenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="/#home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#about_us" class="nav-link">About us</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#getwings" class="nav-link">GetWings</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#clients" class="nav-link">Clients</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#services" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#team" class="nav-link">Team</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#faq" class="nav-link">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+
+<section id="signup" class=" text-dark p-lg-0 text-sm-start">
+    <div class="container-fluid bg-warning text-dark p-3 mb-5">
+        <h1 class="text-center">Admin Team Login Panel</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 mt-5">
+            <div class="container-fluid mt-0 text-light p-3">
+                <h1 class="text-dark">We are <span class="text-warning">Work Allied</span></h1>
+            </div>
+            <img
+            class="img-fluid d-none d-md-block "
+            src="/images/admin-team.svg"
+            alt=""
+            />
+          </div>
+            
+          <div class="col-md-6 mx-auto mt-5">
+              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+              
+              <h3 class="mt-3" style="color: #6C63FF;">Hey Admin, Start working...</h3>
+              
+
+              
+
+              <p class="lead my-4">Have been assigned some team responsibility?</p>
+              <p class="lead my-4">Log in to get insights, form manage and update teams to keep the work rolling smoothly.Having said admins are the glue to the whole system, continue here to keep the team morale high.</p>
+
+              <form action='/admin/login' method="POST">
+              
+                <div class="form-group">
+                    <label for="email" class="lead">Email</label> 
+                    <input id="email" name="email" placeholder="Email" type="text" class="form-control">
+                </div>
+                  
+                <div class="form-group">
+                    <label for="password" class="lead">Password</label> 
+                    <input id="password" name="password" placeholder="Password" type="password" class="form-control">
+                </div>
+                  
+                <!-- <p class="lead">Forgot Password? <a id="forgot-password-click-here" href="" style="text-decoration: none;" onclick="return forgot_password()"  data-toggle="modal">Click here</a></p>   -->
+                <div class="form-group">
+                    <button type="submit" class="btn text-light mt-2" style="background-color:#6C63FF; width: 100%;">Log In</button>
+                </div>
+              </form>
+              <p class="lead my-4">Don't have an account?<a href="/developers/signup" class="text-danger"> Sign Up</a></p>
+
+
+              <!-- modal forgot password -->
+              <div class="modal fade" id="forgot-password-modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background-color:#6C63FF;">
+                      <h5 style="color:white" class="modal-title" id="OTPModalTitle">Forgot Password?</h5>
+                    </div>
+
+                    <p class="text-center mt-3">Enter your account email below to get your new password.Once you click on 'Reset Password',new password of account sent to your mail box.Login using that password once, and then you can change password of your account.</p>
+
+                    <div class="modal-body">
+                      
+                      <form action="/admin/save-new-password" method="POST">
+                        <div class="form-group">
+                          <label for="forgotPasswordEmail" class="lead">Email</label> 
+                          <input id="forgotPasswordEmail" name="forgotPasswordEmail" placeholder="Type your email" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <!-- <a onclick="return sending_new_password('admin')" class="btn text-light mt-2" style="background-color:#6C63FF; width: 100%;">
+                            Send New Password
+                          </a> -->
+                        </div>
+                        <!-- put new password here -->
+                        <div class="form-group">
+                          <label for="forgotPasswordPassword" class="lead">New Password</label> 
+                          <input name="forgotPasswordPassword" type="password" placeholder="Type sent password" type="text" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <button type="submit" class="btn text-light mt-2" style="background-color:#6C63FF; width: 100%;">
+                            Save new Password
+                          </button>
+                        </div>
+
+                      </form>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+            
+
+        </div>
+    </div>
+</section>
+
+<!-- script for client side -->
+<script src='/js/forgot_password.js'></script>
