@@ -14,12 +14,20 @@ const passport = require("passport");
 // =>forwardAuthenticated : by pass the routes without having authentication
 const { forwardAuthenticated, ensureAuthenticated } = require("../config/auth");
 
+const Student = require("../models/Student");
+
 router.get("/login", (req, res) => {
   res.render("student/login");
 });
 
 router.get("/dashboard", (req, res) => {
-  res.render("student/dashboard");
+    const user=req.user;
+    const registrationNumber=user.registrationNumber;
+    res.render('student/dashboard',{
+        user:user,
+        hashes:user.hashes
+    })
+    
 });
 
 //handle post request for Student login page
@@ -42,7 +50,7 @@ router.post("/login", (req, res, next) => {
 router.get("/logout", ensureAuthenticated, (req, res) => {
   req.logout();
   req.flash("success_msg", "You are logged out");
-  res.redirect("/company/login");
+  res.redirect("/student/login");
 });
 
 module.exports = router;
