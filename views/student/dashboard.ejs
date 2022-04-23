@@ -1,23 +1,86 @@
-
-<section id="home" class="bg-light text-dark p-5 p-lg-0 pt-lg-0 text-center text-sm-start">
-    <div class="container-fluid mt-0 bg-dark text-light p-3">
-<form>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Registration Number of Student</label>
-        <input type="text" class="form-control" id="registrationNumber" aria-describedby="emailHelp" placeholder="Enter registration number">
+<!-- navbar  -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <img src="/images/logo.png" alt="" width="45" height="40" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navmenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about_us" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#getstarted" class="nav-link">Get Started</a>
+          </li>
+          <li class="nav-item">
+            <a href="#services" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact-footer" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <form class="form-inline">
+            <button class="btn btn-outline-secondary float-right" type="submit">Logout</button>
+          </form>
       </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">File Name</label>
-        <input type="text" class="form-control" id="fileName" aria-describedby="emailHelp" placeholder="Enter file name">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">File Description</label>
-        <input type="text" class="form-control" id="fileDescription" aria-describedby="emailHelp" placeholder="Enter file description">
-      </div>
-    <div class="form-group">
-      <label for="exampleFormControlFile1">Example file input</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
     </div>
-  </form>
-</div>
-</section>
+  </nav>
+
+<!-- ongoing projects -->
+
+    <section id="advanced">
+        <div class="container-fluid bg-dark text-light p-3">
+            <h3 class="text-center">Your Documents</h3>
+        </div>
+            
+
+        <div class="container p-2">
+            <div class="row">
+
+        
+                <div class="col-lg-3 col-md-4 col-sm-6 m-3">
+        
+                    <div class="card border-success" style="width: 18rem;">
+                        <div class="card-body">
+                        <h5 class="card-title text-dark">FileName</h5>
+                        
+                        
+                        
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <i class="fa fa-link"></i>
+                                <a href="" style="text-decoration: none;" target="_blank">Open Document</a>
+                            </li>   
+                        </ul>
+
+                        <p class=" mb-0" style="font-size: small; color: rgb(0, 0, 0);">
+                            <span id=>File Description</span>
+                            
+                        </p>
+    
+                        
+                        <a href="" class="btn btn-sm btn-success mt-2 float-right" target="_blank">Open Document</a>
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+         
+            </div>
+        </div>
+   
+         
+            
+    </section>
