@@ -18,6 +18,10 @@ router.get("/login", (req, res) => {
   res.render("admin/login");
 });
 
+router.get("/dashboard", (req, res) => {
+  res.render("admin/dashboard");
+});
+
 //handle post request for Student login page
 
 //here comes,passport.js 's 'Local strategy'

@@ -18,13 +18,16 @@ router.get("/login", (req, res) => {
   res.render("student/login");
 });
 
+router.get("/dashboard", (req, res) => {
+  res.render("student/dashboard");
+});
+
 //handle post request for Student login page
 
 //here comes,passport.js 's 'Local strategy'
 // for Student, we have create 'local.student' named to strategy
 //will authenticatec company and most imp , serialize it as a user
 router.post("/login", (req, res, next) => {
-  
   passport.authenticate("local.student", {
     successRedirect: "/student/dashboard",
     failureRedirect: "/student/login",
