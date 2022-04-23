@@ -1,0 +1,43 @@
+
+<section id="home" class="bg-light text-dark p-5 p-lg-0 pt-lg-0 text-center text-sm-start">
+    <div class="container-fluid mt-0 bg-dark text-light p-3">
+        <div class="form-group">
+            <button onclick=login() id="btn-login" type="submit" class="btn text-light mt-2" style="background-color:#6C63FF; width: 100%;">
+            EthAuth
+            </button>
+        </div>
+
+        <form action="/admin/upload" method="POST">
+
+            <div class="form-group">
+                <label>Registration Number of Student</label>
+                <input type="text" name="registrationNumber" class="form-control" id="registrationNumber" aria-describedby="emailHelp" placeholder="Enter registration number">
+            </div>
+            <div class="form-group">
+                <label>File Name</label>
+                <input type="text" name="fileName" class="form-control" id="fileName" aria-describedby="emailHelp" placeholder="Enter file name">
+            </div>
+            <div class="form-group">
+                <label>File Description</label>
+                <input type="text" name="fileDescription" class="form-control" id="fileDescription" aria-describedby="emailHelp" placeholder="Enter file description">
+            </div>
+            <div class="form-group" hidden>
+                <label>File Description</label>
+                <input type="text" name="hash" class="form-control" id="hash" aria-describedby="emailHelp" placeholder="Enter file description">
+            </div>
+            <div class="form-group">
+            <label>Example file input</label>
+            <input type="file" class="form-control-file" id="fileInput">
+            </div>
+            <a onclick=gogogo() class="btn">gogogo</a>
+            <div class="form-group">
+                <button name="submit" type="submit" class="btn text-light mt-2" style="background-color:#6C63FF; width: 100%;">
+                Upload
+                </button>
+            </div>
+
+        </form>
+</div>
+</section>
+
+<script src="/js/ipfs.js"></script>

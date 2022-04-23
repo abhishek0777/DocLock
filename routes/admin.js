@@ -9,6 +9,11 @@ const bcrypt = require("bcryptjs");
 //module for login authentication
 const passport = require("passport");
 
+// bring in all models
+const Student=require('../models/Student')
+const Admin=require('../models/Admin')
+
+
 //bring auth-config file
 // =>ensureAuthenticated : Use to protect the routes
 // =>forwardAuthenticated : by pass the routes without having authentication
@@ -21,6 +26,39 @@ router.get("/login", (req, res) => {
 router.get("/dashboard", (req, res) => {
   res.render("admin/dashboard");
 });
+
+router.post("/upload",(req,res)=>{
+    //need to have a flash message that file has been uploaded
+    // res.render('admin/dashboard');
+    console.log(req.body);
+    const {registrationNumber,fileName,fileDescription,hash}=req.body;
+    var hashed={
+        name:fileName,
+        description:fileDescription,
+        url:hash
+    }
+    console.log(hashed);
+    Student.findOne({registrationNumber:registrationNumber},(err,student)=>{
+        student.hashes.unshift(hashed);
+        Student.updateOne({registrationNumber:registrationNumber},student,(err)=>{
+            if(err){
+                console.log(err);
+                return;
+            }
+            res.render('admin/dashboard');
+        })
+    })
+
+
+    res.render('admin/dashboard')
+})
+
+router.get("/upload/",(req,res)=>{
+
+    
+    console.log("hello");
+    return
+})
 
 //handle post request for Student login page
 
