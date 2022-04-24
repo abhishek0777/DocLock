@@ -21,10 +21,19 @@
         <li class="nav-item mr-1">
             <a href="/" class="nav-link border border-success">Home</a>
         </li>
+
+        <li class="nav-item mr-1">
+            <a href="/student/dashboard" class="nav-link border border-success">Dashboard</a>
+        </li>
           
         <li class="nav-item mr-1">
             <a href="/student/upload" class="nav-link border border-success">Add Doc</a>
         </li>
+
+        <li class="nav-item mr-1">
+            <a href="/student/addNotes" class="nav-link border border-success">Add Note</a>
+        </li>
+
         </ul>
         <ul class="navbar-nav mr-0">
             <li class="nav-item">
@@ -85,7 +94,54 @@
          
             </div>
         </div>
+
+
+        <div class="container-fluid bg-dark text-light p-3">
+            <h3 class="text-center">Your Saved Notes</h3>
+            <p class="text-center text-info">
+            <span>
+                <img src="/images/ipfs-logo.png" alt="" width="40" height="40" />
+            </span>    
+            Stored on IPFS
+            </p>
+        </div>
+
+
+        <div class="container p-2">
+            <div class="row">
+
+            <% texthashes.forEach(hash=>{ %>
+                <div class="col-lg-3 col-md-4 col-sm-6 m-3">
+        
+                    <div class="card border-success" style="width: 18rem;">
+                        <div class="card-body">
+                        <h5 class="card-title text-dark"><%= hash.title %></h5>
+                        
+                        
+                        
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <i class="fa fa-link"></i>
+                                <a href="<%= hash.url %>" style="text-decoration: none;" target="_blank">Open Document</a>
+                            </li>   
+                        </ul>
+    
+                        
+                        <a href="<%= hash.url%>" class="btn btn-sm btn-primary mt-2 float-right" target="_blank">Open Document</a>
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+            <% }) %>
+                
+         
+            </div>
+        </div>
    
          
             
-    </section>
+</section>
+
+
+<script src="/js/ipfs.js"></script>

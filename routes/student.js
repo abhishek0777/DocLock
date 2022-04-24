@@ -9,6 +9,10 @@ const bcrypt = require("bcryptjs");
 //module for login authentication
 const passport = require("passport");
 
+
+const IPFS=require('ipfs-mini');
+const ipfs=new IPFS({host:'ipfs.infura.io',port:5001,protocol:'https'});
+
 //bring auth-config file
 // =>ensureAuthenticated : Use to protect the routes
 // =>forwardAuthenticated : by pass the routes without having authentication
@@ -25,7 +29,8 @@ router.get("/dashboard", (req, res) => {
     const registrationNumber=user.registrationNumber;
     res.render('student/dashboard',{
         user:user,
-        hashes:user.hashes
+        hashes:user.hashes,
+        texthashes:user.texthashes
     })
 });
 
@@ -40,7 +45,6 @@ router.post("/upload",(req,res)=>{
     //need to have a flash message that file has been uploaded
     // res.render('admin/dashboard');
     const user=req.user;
-    console.log(req.body);
     const {fileName,fileDescription,hash}=req.body;
     const registrationNumber=user.registrationNumber
     var hashed={
@@ -58,14 +62,66 @@ router.post("/upload",(req,res)=>{
             }
             res.render('student/dashboard',{
                 user:req.user,
-                hashes:req.user.hashes
+                hashes:req.user.hashes,
+                texthashes:user.texthashes
             });
         })
     })
 
 
     res.render('student/dashboard',{
+        user:req.user,
+        hashes:req.user.hashes,
+        texthashes:user.texthashes
+    })
+})
+
+
+router.get('/addNotes',(req,res)=>{
+    res.render('student/addNotes',{
         user:req.user
+    })
+})
+
+router.post('/addNotes',(req,res)=>{
+    const user=req.user
+    const {title,text}=req.body;
+
+    const registrationNumber=user.registrationNumber
+    
+    ipfs.add(text,(err,hash)=>{
+        if(err){
+            return console.log(err);
+        }
+        const URL='https://ipfs.infura.io/ipfs/'+hash;
+        console.log(URL);
+        Student.findOne({registrationNumber:registrationNumber},(err,student)=>{
+            const hashed={
+                title:title,
+                text:text,
+                url:URL
+            }
+            student.texthashes.unshift(hashed);
+            Student.updateOne({registrationNumber:registrationNumber},student,(err)=>{
+                if(err){
+                    console.log(err);
+                    return;
+                }
+                res.render('student/dashboard',{
+                    user:user,
+                    hashes:user.hashes,
+                    texthashes:user.texthashes
+                });
+            })
+        })
+    })
+    
+
+
+    res.render('student/dashboard',{
+        user:req.user,
+        hashes:req.user.hashes,
+        texthashes:user.texthashes
     })
 })
 

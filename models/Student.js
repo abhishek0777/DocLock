@@ -32,6 +32,11 @@ const StudentSchema=mongoose.Schema({
         description:{type:String},
         url:{type:String}
     }],
+    texthashes:[{
+        title:{type:String},
+        text:{type:String},
+        url:{type:String}
+    }],
     notifications:[String]
 
 });

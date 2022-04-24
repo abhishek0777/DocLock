@@ -21,17 +21,17 @@
         <li class="nav-item mr-1">
             <a href="/" class="nav-link border border-success">Home</a>
         </li>
-
+        
         <li class="nav-item mr-1">
-          <a href="/student/dashboard" class="nav-link border border-success">Dashboard</a>
+            <a href="/student/dashboard" class="nav-link border border-success">Dashboard</a>
         </li>
-          
+
         <li class="nav-item mr-1">
             <a href="/student/upload" class="nav-link border border-success">Add Doc</a>
         </li>
 
         <li class="nav-item mr-1">
-          <a href="/student/addNotes" class="nav-link border border-success">Add Note</a>
+            <a href="/student/addNotes" class="nav-link border border-success">Add Note</a>
         </li>
 
         </ul>
@@ -46,7 +46,7 @@
   
   <section id="advanced">
     <div class="container-fluid bg-dark text-light p-3">
-      <h3 class="text-center">Upload Documents</h3>
+      <h3 class="text-center">Save Text Notes</h3>
       <p class="text-center text-info mb-0">
         <span>
           <img src="/images/ipfs-logo.png" alt="" width="40" height="40" />
@@ -72,13 +72,13 @@
                 </button>
               </div>
   
-              <form action="/student/upload" method="POST">
+              <form action="/student/addNotes" method="POST">
                 
                 <div class="form-group">
-                  <label>File Name</label>
+                  <label>Text Title</label>
                   <input
                     type="text"
-                    name="fileName"
+                    name="title"
                     class="form-control"
                     id="fileName"
                     aria-describedby="emailHelp"
@@ -87,36 +87,23 @@
                 </div>
                 <div class="form-group">
                   <label>File Description</label>
-                  <input
-                    type="text"
-                    name="fileDescription"
+                  <textarea
+                    
+                    name="text"
                     class="form-control"
                     id="fileDescription"
                     aria-describedby="emailHelp"
                     placeholder="Enter file description"
-                  />
+                  ></textarea>
                 </div>
-                <div class="form-group" hidden>
-                  <label>File Description</label>
-                  <input
-                    type="text"
-                    name="hash"
-                    class="form-control"
-                    id="hash"
-                    aria-describedby="emailHelp"
-                    placeholder="Enter file description"
-                  />
-                </div>
-                <div class="form-group">
-                  <label>File input</label>
-                  <input type="file" class="form-control-file" id="fileInput" />
-                </div>
-                <a
+                
+                
+                <!-- <a
                   onclick="gogogo()"
                   class="btn text-light mt-2"
                   style="background-color: #6c63ff; width: 50%"
                   >Upload</a
-                >
+                > -->
                 <div class="form-group">
                   <button
                     name="submit"
