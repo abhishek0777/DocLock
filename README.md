@@ -3,13 +3,18 @@
 <p align="center">
 </p>
 <a href="https://hack36.com"> <img src= "https://user-images.githubusercontent.com/59080953/164938003-b23163ff-964c-4b7d-9414-bb8e9ad4a569.jpg" width = "240 " height = "40" >
+ <br>
+<img src = "https://user-images.githubusercontent.com/59080953/164955749-011bf5f7-bede-4f03-8986-16e34b9c70fe.jpg" width = "50" height ="40">
+
+
+
 
 
  </a>
  <img src = "https://user-images.githubusercontent.com/59080953/164952698-d5687439-6d12-4c6e-b07d-c2156c2bc069.gif">
  
  <h2>Table of Contents</h2>
-<ol>
+<ul>
     <li><a href="#Introduction">Introduction</a></li>
     <li><a href="#Video-link">Video-link</a></li>
     <li><a href="#PresentationLink">Presentation Link</a></li>
@@ -17,7 +22,7 @@
     <li><a href="#TechnologyStack">Technology Stack</a></li>
     <li><a href="#Contributors">Contributors</a></li>
 
-</ol>
+</ul>
 
 
 
@@ -50,10 +55,13 @@
 
 <h2 id="TechnologyStack">Technology Stack</h2>
 
-  Frontend : NodeJs , ExpressJs 
-  Database : MongoDb
-  File Storage : IPFS 
-   
+  Frontend : ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) , ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+  <br>
+  Database : ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+  <br>
+  File Storage : 
+<img src = "https://user-images.githubusercontent.com/59080953/164955749-011bf5f7-bede-4f03-8986-16e34b9c70fe.jpg" width = "50" height ="40">
+
 <h2 id="Contributors">Contributors</h2>
 
 <img src = "https://user-images.githubusercontent.com/59080953/164934609-fcc60864-adec-4c54-866b-e14c18d881e0.gif" width="130" height ="25">
