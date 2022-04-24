@@ -27,9 +27,7 @@
 
 
 <h2 id="Introduction">Introduction</h2>
-<p> *DocLock* is a dedicated one-stop solution for all kinds of official paperwork done, proper management in an institution . This Project was build under the annual Hackathon Hack36 5th edition organised by MNNIT Allahabad. 36 hours of caffeniation , collaboration and celebration gave such a tremendous use of IPFS and Web-development . Whether you want to instantly show your credentials for your skills in an interview or just want to safely save your important documents, DocLock will come to your rescue. But there is a catch to it. These documents will not be stored in a centralized database instead they will be stored in a decentralized manner. For this we will be using IPFS as its content addressing enables us to store large files off-chain and put immutable, permanent links in transactions — timestamping and securing content without having to put the data itself on-chain. 
-
-</p> 
+<p>DocLock is a dedicated one-stop solution for all kinds of official paperwork done, proper management in an institution . This Project was build under the annual Hackathon Hack36 5th edition organised by MNNIT Allahabad. 36 hours of caffeniation , collaboration and celebration gave such a tremendous use of IPFS and Web-development . Whether you want to instantly show your credentials for your skills in an interview or just want to safely save your important documents, DocLock will come to your rescue. But there is a catch to it. These documents will not be stored in a centralized database instead they will be stored in a decentralized manner. For this we will be using IPFS as its content addressing enables us to store large files off-chain and put immutable, permanent links in transactions — timestamping and securing content without having to put the data itself on-chain.</p> 
   
 <h2 id="Video-link">Video-link</h2>
   <a href="https://youtu.be/cmicxTVNC2Y">You Tube Video</a>
