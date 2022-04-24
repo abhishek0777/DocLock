@@ -27,8 +27,47 @@ router.get("/dashboard", (req, res) => {
         user:user,
         hashes:user.hashes
     })
-    
 });
+
+
+router.get('/upload',(req,res)=>{
+    res.render('student/upload',{
+        user:req.user
+    })
+})
+
+router.post("/upload",(req,res)=>{
+    //need to have a flash message that file has been uploaded
+    // res.render('admin/dashboard');
+    const user=req.user;
+    console.log(req.body);
+    const {fileName,fileDescription,hash}=req.body;
+    const registrationNumber=user.registrationNumber
+    var hashed={
+        name:fileName,
+        description:fileDescription,
+        url:hash
+    }
+    console.log(hashed);
+    Student.findOne({registrationNumber:registrationNumber},(err,student)=>{
+        student.hashes.unshift(hashed);
+        Student.updateOne({registrationNumber:registrationNumber},student,(err)=>{
+            if(err){
+                console.log(err);
+                return;
+            }
+            res.render('student/dashboard',{
+                user:req.user,
+                hashes:req.user.hashes
+            });
+        })
+    })
+
+
+    res.render('student/dashboard',{
+        user:req.user
+    })
+})
 
 //handle post request for Student login page
 

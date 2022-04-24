@@ -14,27 +14,24 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navmenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a href="/" class="nav-link">Home</a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mr-1">
+          <a href="/" class="nav-link border border-dark">Hello, <%= user.name %></a>
         </li>
-        <li class="nav-item">
-          <a href="/#about_us" class="nav-link">About Us</a>
+        <li class="nav-item mr-1">
+          <a href="/" class="nav-link border border-primary">Home</a>
         </li>
-        <li class="nav-item">
-          <a href="/#getstarted" class="nav-link">Get Started</a>
+        <li class="nav-item mr-1">
+          <a href="/admin/dashboard" class="nav-link border border-primary"
+            >Add Doc
+        </a>
         </li>
-        <li class="nav-item">
-          <a href="/#services" class="nav-link">Services</a>
-        </li>
-        <li class="nav-item">
-          <a href="/#contact-footer" class="nav-link">Contact</a>
-        </li>
-        
       </ul>
-      <ul class="navbar-nav mr-0">
+      <ul class="navbar-nav">
         <li class="nav-item">
-            <a href="/admin/logout" class="nav-link float-right">LogOut</a>
+          <a href="/admin/logout" class="nav-link border border-primary"
+            >LogOut</a
+          >
         </li>
       </ul>
       <!-- <button class="btn btn-outline-secondary float-right" type="submit">
@@ -47,6 +44,12 @@
 <section id="advanced">
   <div class="container-fluid bg-dark text-light p-3">
     <h3 class="text-center">Upload Documents</h3>
+    <p class="text-center text-info mb-0">
+      <span>
+        <img src="/images/ipfs-logo.png" alt="" width="40" height="40" />
+      </span>
+      Stored on IPFS
+    </p>
   </div>
 
   <section class="portfolioBG bg-dark">

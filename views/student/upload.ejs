@@ -1,0 +1,130 @@
+<!-- navbar  -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <img src="/images/logo.png" alt="" width="45" height="40" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navmenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item mr-1">
+            <a href="/" class="nav-link border border-dark">Hello, <%= user.name %></a>
+        </li>
+        <li class="nav-item mr-1">
+            <a href="/" class="nav-link border border-success">Home</a>
+        </li>
+          
+        <li class="nav-item mr-1">
+            <a href="/student/upload" class="nav-link border border-success">Add Doc</a>
+        </li>
+        </ul>
+        <ul class="navbar-nav mr-0">
+            <li class="nav-item">
+                <a href="/student/logout" class="nav-link border border-success">LogOut</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+  
+  <section id="advanced">
+    <div class="container-fluid bg-dark text-light p-3">
+      <h3 class="text-center">Upload Documents</h3>
+      <p class="text-center text-info mb-0">
+        <span>
+          <img src="/images/ipfs-logo.png" alt="" width="40" height="40" />
+        </span>
+        Stored on IPFS
+      </p>
+    </div>
+  
+    <section class="portfolioBG bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12 mx-auto">
+            <div class="container-fluid mt-0 bg-dark text-light p-3">
+              <div class="form-group">
+                <button
+                  onclick="login()"
+                  id="btn-login"
+                  type="submit"
+                  class="btn text-light mt-2"
+                  style="background-color: #6c63ff; width: 100%"
+                >
+                  EthAuth
+                </button>
+              </div>
+  
+              <form action="/student/upload" method="POST">
+                
+                <div class="form-group">
+                  <label>File Name</label>
+                  <input
+                    type="text"
+                    name="fileName"
+                    class="form-control"
+                    id="fileName"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter file name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>File Description</label>
+                  <input
+                    type="text"
+                    name="fileDescription"
+                    class="form-control"
+                    id="fileDescription"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter file description"
+                  />
+                </div>
+                <div class="form-group" hidden>
+                  <label>File Description</label>
+                  <input
+                    type="text"
+                    name="hash"
+                    class="form-control"
+                    id="hash"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter file description"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>File input</label>
+                  <input type="file" class="form-control-file" id="fileInput" />
+                </div>
+                <a
+                  onclick="gogogo()"
+                  class="btn text-light mt-2"
+                  style="background-color: #6c63ff; width: 50%"
+                  >Upload</a
+                >
+                <div class="form-group">
+                  <button
+                    name="submit"
+                    type="submit"
+                    class="btn text-light mt-2"
+                    style="background-color: #6c63ff; width: 100%"
+                  >
+                    Save your hash
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  
+  <script src="/js/ipfs.js"></script>
+  

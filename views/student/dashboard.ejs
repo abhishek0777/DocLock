@@ -14,31 +14,26 @@
       </button>
   
       <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a href="#home" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#about_us" class="nav-link">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a href="#getstarted" class="nav-link">Get Started</a>
-          </li>
-          <li class="nav-item">
-            <a href="#services" class="nav-link">Services</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact-footer" class="nav-link">Contact</a>
-          </li>
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item mr-1">
+            <a href="/" class="nav-link border border-dark">Hello, <%= user.name %></a>
+        </li>
+        <li class="nav-item mr-1">
+            <a href="/" class="nav-link border border-success">Home</a>
+        </li>
+          
+        <li class="nav-item mr-1">
+            <a href="/student/upload" class="nav-link border border-success">Add Doc</a>
+        </li>
         </ul>
         <ul class="navbar-nav mr-0">
             <li class="nav-item">
-                <a href="/student/logout" class="nav-link float-right">LogOut</a>
+                <a href="/student/logout" class="nav-link border border-success">LogOut</a>
             </li>
         </ul>
       </div>
     </div>
-  </nav>
+</nav>
 
 
     <section id="advanced">
@@ -68,7 +63,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <i class="fa fa-link"></i>
-                                <a href="<%= hash.url %>" style="text-decoration: none;" download>Open Document</a>
+                                <a href="<%= hash.url %>" style="text-decoration: none;" target="_blank">Open Document</a>
                             </li>   
                         </ul>
 

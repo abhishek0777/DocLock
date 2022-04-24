@@ -24,7 +24,9 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/dashboard", (req, res) => {
-  res.render("admin/dashboard");
+    res.render("admin/dashboard",{
+        user:req.user
+    });
 });
 
 router.post("/upload",(req,res)=>{
@@ -50,7 +52,9 @@ router.post("/upload",(req,res)=>{
     })
 
 
-    res.render('admin/dashboard')
+    res.render('admin/dashboard',{
+        user:req.user
+    })
 })
 
 router.get("/upload/",(req,res)=>{
